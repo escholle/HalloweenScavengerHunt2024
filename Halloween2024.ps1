@@ -75,8 +75,3 @@ if(!(Get-ChildItem -Path $FilePath12 -Force -ErrorAction SilentlyContinue)) {
     Write-host "File '$FilePath12' already exists!"
 }
 
-#if(!(Get-ChildItem -Path $FilePath11 -Force -ErrorAcion SilentlyContinue)) {
-#    notepad.exe -Path $FilePath12 
-#} else {
-#    notepad.exe -Path $FilePath11
-#}
