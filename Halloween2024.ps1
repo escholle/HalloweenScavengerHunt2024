@@ -76,7 +76,7 @@ if(!(Get-ChildItem -Path $FilePath12 -Force -ErrorAction SilentlyContinue)) {
 }
 
 #if(!(Get-ChildItem -Path $FilePath11 -Force -ErrorAcion SilentlyContinue)) {
-    notepad.exe -Path $FilePath12 
+#    notepad.exe -Path $FilePath12 
 #} else {
-    notepad.exe -Path $FilePath11
+#    notepad.exe -Path $FilePath11
 #}
